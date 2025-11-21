@@ -1,0 +1,74 @@
+/* Site-wide custom styles */
+:root{
+  --bg: #0e141b;
+  --text: #e6eef8;
+  --muted: #9fb0c8;
+}
+
+html,body{
+  height:100%;
+  margin:0;
+}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  box-sizing:border-box;
+  background:transparent;
+  z-index:1000;
+}
+
+.header-left{
+  font-weight:600;
+  font-size:1.05rem;
+  color:var(--text);
+}
+
+.header-right{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:6px;
+}
+
+.header-right a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:0.95rem;
+}
+
+.header-right a:hover{
+  color:var(--text);
+  text-decoration:underline;
+}
+
+.site-main{
+  padding:80px 20px 40px; /* leave space for fixed header */
+  max-width:960px;
+  margin:0 auto;
+}
+
+.site-footer{
+  text-align:center;
+  color:var(--muted);
+  padding:40px 20px;
+}
+
+/* Respect links inside content */
+.site-main a{
+  color:#8fb8ff;
+}

@@ -4,8 +4,7 @@
 
 layout: home
 ---
-Welcome to my website!
-This is my first Jekyll project.
+Hello, My name is Nazrin
 
 - [Home](/)
 - [About](/about/)

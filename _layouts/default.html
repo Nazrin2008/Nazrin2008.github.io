@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+    {{ content_for_head }}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-left">Nazrin Panakhova</div>
+      <nav class="header-right" aria-label="Primary">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+    </footer>
+  </body>
+</html>
