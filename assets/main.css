@@ -81,6 +81,41 @@ body{
   text-decoration:underline;
 }
 
+/* Responsive typography for homepage */
+.home-greeting{
+  margin:0 0 .6rem 0;
+  font-weight:600;
+  /* scale between 1.1rem and 1.8rem depending on viewport */
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+}
+.home-intro{
+  margin:0 0 1rem 0;
+  line-height:1.5;
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+}
+.home-intro .ada-line{
+  display:block;
+  font-weight:600;
+  font-size: clamp(1rem, 2.6vw, 1.12rem);
+  margin-bottom:.4rem;
+}
+
+/* Adjust header sizes on small screens */
+@media (max-width:700px){
+  .site-header{ height:52px; padding:0 12px; }
+  .header-left{ font-size:0.95rem; }
+  .header-right a{ font-size:0.95rem; }
+  .home-greeting{ font-size: clamp(1rem, 5vw, 1.25rem); }
+  .home-intro .ada-line{ font-size: clamp(0.98rem, 3.4vw, 1.05rem); }
+  .site-main{ padding:72px 12px 24px; }
+}
+
+@media (max-width:420px){
+  .home-greeting{ font-size:1rem; }
+  .home-intro{ font-size:0.95rem; }
+  .header-right{ gap:10px; }
+}
+
 .site-main{
   padding:80px 20px 40px; /* leave space for fixed header */
   max-width:960px;
@@ -111,6 +146,9 @@ body{
   color:var(--muted);
   padding:40px 20px;
 }
+
+/* Hide RSS subscribe text and post dates on homepage/listings */
+.rss-subscribe, .post-meta, time.dt-published { display:none !important; }
 
 /* Respect links inside content */
 .site-main a{
