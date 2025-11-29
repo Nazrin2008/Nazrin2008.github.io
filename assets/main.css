@@ -34,9 +34,40 @@ body{
 
 .header-left{
   font-weight:600;
-  font-size:1.05rem;
+  font-size:1.2rem;
   color:var(--text);
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
+
+.profile-pic{
+  width:52px;
+  height:52px;
+  border-radius:60%;
+  object-fit:cover;
+  display:block;
+}
+
+.header-name{
+  display:inline-block;
+}
+
+/* Homepage: stack name above a slightly larger circular profile picture */
+.home .site-header{ height:auto; padding:18px 20px; }
+.home .header-left{
+  flex-direction:row;
+  align-items:center; /* vertically center */
+  gap:12px;
+  text-align:left;
+}
+.home .profile-pic{
+  width:52px;
+  height:52px;
+  margin-top:0;
+  box-shadow:none;
+}
+.home .header-name{ font-size:1rem; }
 
 .menu-toggle{
   background:transparent;
@@ -101,13 +132,46 @@ body{
 }
 
 /* Adjust header sizes on small screens */
+
 @media (max-width:700px){
-  .site-header{ height:52px; padding:0 12px; }
+  .site-header{ height:auto; padding:12px; }
   .header-left{ font-size:0.95rem; }
   .header-right a{ font-size:0.95rem; }
   .home-greeting{ font-size: clamp(1rem, 5vw, 1.25rem); }
   .home-intro .ada-line{ font-size: clamp(0.98rem, 3.4vw, 1.05rem); }
-  .site-main{ padding:72px 12px 24px; }
+  .site-main{ padding:220px 12px 24px; }
+  .home .profile-pic{ width:140px; height:140px; }
+}
+
+@media (max-width:420px){
+  .home .profile-pic{ width:100px; height:100px; }
+  .home .header-name{ font-size:1.15rem; }
+  .home-greeting{ font-size:1rem; }
+  .home-intro{ font-size:0.95rem; }
+  .header-right{ gap:10px; }
+}
+
+/* Position left picture and right text in middle of the viewport on homepage */
+.home .header-left{
+  position:static;
+  left:auto;
+  top:auto;
+  transform:none;
+}
+.home .home-hero-text{
+  position:static;
+  right:auto;
+  top:auto;
+  transform:none;
+  max-width:100%;
+  margin-top:24px;
+}
+
+@media (max-width:900px){
+  /* revert to stacked layout on narrower screens */
+  .home .header-left{ position:static; transform:none; left:auto; top:auto; }
+  .home .home-hero-text{ position:static; transform:none; right:auto; max-width:100%; margin-top:12px; }
+  .site-main{ padding:140px 12px 24px; }
 }
 
 @media (max-width:420px){
@@ -147,8 +211,23 @@ body{
   padding:40px 20px;
 }
 
+.footer-about{
+  display:none;
+}
+.about-text{
+  display:none;
+}
+
+.footer-contact-section{
+  margin:24px 0;
+  text-align:center;
+}
+
 /* Hide RSS subscribe text and post dates on homepage/listings */
 .rss-subscribe, .post-meta, time.dt-published { display:none !important; }
+
+/* Hide posts section and post list from homepage */
+.post-list, .home .posts-section, .home h2 { display:none !important; }
 
 /* Respect links inside content */
 .site-main a{
@@ -168,10 +247,39 @@ body{
 .footer-left{ flex:1; }
 .footer-contact{ flex:1; text-align:right; }
 .contact-title{ display:block; color:var(--text); margin-bottom:6px; font-weight:600; }
-.contact-list{ list-style:none; margin:0; padding:0; display:inline-flex; gap:12px; align-items:center; }
+.contact-list{ list-style:none; margin:0; padding:0; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
 .contact-list li{ display:inline-block; }
 .contact-list .footer-link{ color:var(--muted); }
-.contact-list .footer-link svg{ margin-right:6px; }
+.contact-list .footer-link svg{ margin-right:0; }
+.contact-list.contact-icons .footer-link{ 
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 12px;
+  border-radius:6px;
+  color:var(--muted);
+  text-decoration:none;
+  font-size:0.9rem;
+  transition:color 0.2s, transform 0.2s;
+}
+.contact-list.contact-icons .icon{ 
+  width:20px;
+  height:20px;
+  display:block;
+  color:inherit;
+  flex-shrink:0;
+}
+.contact-list.contact-icons .site-name{
+  display:inline;
+  font-size:0.9rem;
+}
+.contact-list.contact-icons .footer-link:hover{ 
+  color:var(--text);
+  transform:translateY(-2px);
+}
+.contact-list.contact-icons .footer-link:focus{ 
+  outline:2px solid rgba(143,184,255,0.18);
+}
 .footer-links{
   display:flex;
   gap:12px;
@@ -186,6 +294,29 @@ body{
 }
 .footer-link svg{ display:block; color:var(--muted); }
 .footer-link:hover{ color:var(--text); }
+
+/* Bottom footer contact info section */
+.footer-bottom{
+  border-top:1px solid rgba(143,184,255,0.1);
+  margin-top:16px;
+  padding-top:16px;
+  text-align:center;
+}
+.footer-contact-section{
+  margin-bottom:12px;
+}
+.contact-info{
+  margin:0;
+  font-size:0.85rem;
+  color:var(--muted);
+}
+.contact-info a{
+  color:#8fb8ff;
+  text-decoration:none;
+}
+.contact-info a:hover{
+  text-decoration:underline;
+}
 
 /* Responsive: hide nav and show toggle on small screens */
 @media (max-width:700px){
