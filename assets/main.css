@@ -263,8 +263,8 @@ body{
   transition:color 0.2s, transform 0.2s;
 }
 .contact-list.contact-icons .icon{ 
-  width:20px;
-  height:20px;
+  width:15px;
+  height:15px;
   display:block;
   color:inherit;
   flex-shrink:0;
