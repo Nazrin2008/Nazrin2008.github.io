@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Projects
+permalink: /projects/
 ---
 
 This file has been disabled. The canonical Projects page is `projects.markdown`.
