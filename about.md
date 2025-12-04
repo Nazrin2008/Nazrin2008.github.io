@@ -1,7 +1,7 @@
 ---
 layout: home
 title: About me
-permalink: https://nazrin2008.github.io/Nazrin.github.io/about
+permalink: /about/
 ---
 
 I have participated in several coding workshops, where I learned the basics of <b>HTML</b> and <b>CSS</b>. These workshops helped me understand how websites are structured and how design works.
