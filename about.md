@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: home
 title: About me
 permalink: https://nazrin2008.github.io/Nazrin.github.io/about
 ---
