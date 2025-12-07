@@ -1,12 +1,10 @@
 ---
 layout: page
 title: About me
-permalink: /about/
+permalink: /about
 ---
 
 I have participated in several coding workshops, where I learned the basics of <b>HTML</b> and <b>CSS</b>. These workshops helped me understand how websites are structured and how design works.
-
-I have also participated in <b>Informatics olympiads</b> , which strengthened my problem-solving skills, logical thinking, and ability to stay focused under pressure. Preparing for these competitions taught me how to break complex problems into clear steps and develop efficient solutions.
 
 Over the years, I have taken part in international teamwork competitions such as [OCEP](https://www.eurolympic.org/olympic-culture-and-education-programme-launched-in-baku/) , [IEARN](https://www.iearn.org/) , and [E-twinning](https://school-education.ec.europa.eu/en/etwinning) , as well as science fairs and events like <b>“My Path in IT”</b> and the <b>Informatics Olympiad</b>. These experiences helped me grow as a communicator, collaborator, and critical thinker.
 
