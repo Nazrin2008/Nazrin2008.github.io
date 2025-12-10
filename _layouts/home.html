@@ -3,15 +3,15 @@ layout: default
 ---
 
 <!doctype html>
-
-
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
     {{ content_for_head }}
-  
-  
+  </head>
+  <body{% if page.layout == 'home' %} class="home"{% endif %}>
     <header class="site-header">
       <div class="header-left">
         <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Nazrin Panakhova" class="profile-pic">
@@ -69,4 +69,5 @@ layout: default
     </footer>
 
     <script src="{{ '/assets/main.js' | relative_url }}"></script>
-  
+  </body>
+</html>
