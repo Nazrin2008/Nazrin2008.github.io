@@ -1,5 +1,4 @@
 ---
-layout: home
 ---
 
 <!doctype html>
@@ -27,8 +26,40 @@ layout: home
       </nav>
     </header>
 
+    <!-- page.title: {{ page.title }} | page.url: {{ page.url }} -->
     <main class="site-main">
-      {{ content }}
+      {% if page.url == "/" or page.title == "Home" %}
+        <section class="hero">
+          <div class="hero-left">
+            <h1 class="hero-title">Hey, I’m Nazrin.</h1>
+
+            <div class="hero-roles">
+              <span>Student</span>
+              <span>Information Technology</span>
+              <span>Student at ADA University</span>
+            </div>
+
+            <p class="hero-intro">I study Information Technology at ADA University. I enjoy solving problems and building projects that help me learn new skills in science, mathematics and technology. I’m curious, motivated, and interested in collaborative, hands-on work.</p>
+
+            <p><a class="hero-cta" href="{{ '/about/' | relative_url }}">Read more →</a></p>
+          </div>
+
+          <div class="hero-right">
+            <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Nazrin Panakhova" class="hero-photo">
+          </div>
+        </section>
+        <section class="hero-skills">
+          <h3>Soft skills:</h3>
+          <ul>
+            <li>Communication</li>
+            <li>Time management</li>
+            <li>Teamwork</li>
+            <li>Willingness to learn</li>
+          </ul>
+        </section>
+      {% else %}
+        {{ content }}
+      {% endif %}
     </main>
 
     <footer class="site-footer">
