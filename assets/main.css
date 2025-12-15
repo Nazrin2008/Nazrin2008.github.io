@@ -131,6 +131,63 @@ body{
   margin-bottom:.4rem;
 }
 
+/* New hero layout inspired by trysmudford.com */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
+  max-width:980px;
+  margin:40px auto;
+  padding:8px 20px;
+}
+.hero-left{ flex:1; }
+.hero-right{ flex:0 0 220px; }
+.hero-title{
+  margin:0 0 .4rem 0;
+  font-weight:700;
+  font-size: clamp(2rem, 6.5vw, 3.2rem);
+  color:var(--text);
+}
+.hero-roles{
+  margin-top:8px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  color:var(--muted);
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  font-size:0.82rem;
+}
+.hero-intro{
+  margin-top:16px;
+  max-width:60ch;
+  color:var(--text);
+  line-height:1.6;
+}
+.hero-photo{
+  width:200px;
+  height:200px;
+  object-fit:cover;
+  border-radius:12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  display:block;
+}
+.hero-cta{
+  margin-top:12px;
+  color:#8fb8ff;
+  text-decoration:none;
+  font-weight:600;
+}
+.hero-cta:hover{ text-decoration:underline; }
+
+@media (max-width:900px){
+  .hero{ flex-direction:column; align-items:flex-start; }
+  .hero-right{ order:2; width:140px; }
+  .hero-photo{ width:140px; height:140px; border-radius:50%; }
+}
+
 /* Adjust header sizes on small screens */
 
 @media (max-width:700px){
