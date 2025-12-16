@@ -8,6 +8,7 @@
     {{ content_for_head }}
   </head>
   <body{% if page.layout == 'home' %} class="home"{% endif %}>
+    <!-- DEBUG_PAGE: title={{ page.title }} url={{ page.url }} layout={{ page.layout }} -->
     <header class="site-header">
       <div class="header-left">
         <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Nazrin Panakhova" class="profile-pic">
@@ -24,7 +25,67 @@
     </header>
 
     <main class="site-main">
-      {{ content }}
+      {% if page.url == "/" or page.title == "Home" %}
+        <section class="hero">
+          <div class="hero-left">
+            <h1 class="hero-title">Hey, I’m Nazrin.</h1>
+
+            <div class="hero-roles">
+              <span>Student</span>
+              <span>Information Technology</span>
+              <span>Student at ADA University</span>
+            </div>
+
+            <p class="hero-intro">I study Information Technology at ADA University. I enjoy solving problems and building projects that help me learn new skills in science, mathematics and technology. I’m curious, motivated, and interested in collaborative, hands-on work.</p>
+
+            <p><a class="hero-cta" href="{{ '/about/' | relative_url }}">Read more →</a></p>
+          </div>
+
+          <div class="hero-right">
+            <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Nazrin Panakhova" class="hero-photo">
+          </div>
+        </section>
+
+        <section class="hero-skills">
+          <h3>Soft skills:</h3>
+          <ul>
+            <li>Communication</li>
+            <li>Time management</li>
+            <li>Teamwork</li>
+            <li>Willingness to learn</li>
+          </ul>
+        </section>
+
+        <section class="home-cards">
+          <a class="card card-skills" href="{{ '/' | relative_url }}">
+            <div class="card-content">
+              <h3>Skills</h3>
+              <ul>
+                <li>Communication</li>
+                <li>Time management</li>
+                <li>Teamwork</li>
+                <li>Willingness to learn</li>
+              </ul>
+            </div>
+          </a>
+
+          <a class="card card-certificates" href="{{ '/about/#certificates' | relative_url }}">
+            <div class="card-cover" style="background-image:url('{{ '/assets/images/sertificate7.jpeg' | relative_url }}')"></div>
+            <div class="card-content"><h3>Certificates</h3></div>
+          </a>
+
+          <a class="card card-projects" href="{{ '/projects/' | relative_url }}">
+            <div class="card-content"><h3>Projects</h3></div>
+          </a>
+
+          <a class="card card-books" href="{{ '/about/#books' | relative_url }}">
+            <div class="card-cover" style="background-image:url('{{ '/assets/images/image.png' | relative_url }}')"></div>
+            <div class="card-content"><h3>Favourite Books</h3></div>
+          </a>
+        </section>
+      {% else %}
+        {{ content }}
+      {% endif %}
     </main>
 
     <footer class="site-footer">

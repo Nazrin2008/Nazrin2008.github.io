@@ -4,6 +4,7 @@
 
 layout: home
 title: Home
+permalink: /
 ---
 
 
@@ -36,6 +37,34 @@ title: Home
     <li>Teamwork</li>
     <li>Willingness to learn</li>
   </ul>
+</section>
+
+<section class="home-cards">
+  <a class="card card-skills" href="{{ '/' | relative_url }}">
+    <div class="card-content">
+      <h3>Skills</h3>
+      <ul>
+        <li>Communication</li>
+        <li>Time management</li>
+        <li>Teamwork</li>
+        <li>Willingness to learn</li>
+      </ul>
+    </div>
+  </a>
+
+  <a class="card card-certificates" href="{{ '/about/#certificates' | relative_url }}">
+    <div class="card-cover" style="background-image:url('{{ '/assets/images/sertificate7.jpeg' | relative_url }}')"></div>
+    <div class="card-content"><h3>Certificates</h3></div>
+  </a>
+
+  <a class="card card-projects" href="{{ '/projects/' | relative_url }}">
+    <div class="card-content"><h3>Projects</h3></div>
+  </a>
+
+  <a class="card card-books" href="{{ '/about/#books' | relative_url }}">
+    <div class="card-cover" style="background-image:url('{{ '/assets/images/image.png' | relative_url }}')"></div>
+    <div class="card-content"><h3>Favourite Books</h3></div>
+  </a>
 </section>
 
 

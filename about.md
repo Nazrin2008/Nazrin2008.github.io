@@ -21,5 +21,34 @@ I also enjoy public speaking and have worked on presentations for conferences, a
 </div>
 
 
+<!-- Certificates gallery -->
+<hr />
+<section id="certificates">
+	<h2>My Certificates</h2>
+	<p>If the images are missing here, please copy the certificate files into <code>assets/images/</code> (see repository instructions below).</p>
 
-[jekyll-organization]: https://github.com/jekyll
+	{% assign certs = "sertificate8.jpeg|sertificate6.jpeg|sertificate7.jpeg|sertificate5.jpeg|sertificate.jpeg|sertificate2.jpeg|sertificate10.jpeg|sertificate9.jpeg|sertificate12.jpeg|sertificate11.jpeg|sertificate3.jpeg|sertificate4.jpeg" | split: "|" %}
+	<div class="certificates-grid">
+		{% for c in certs %}
+			<figure class="cert-item">
+				<img src="{{ '/assets/images/' | append: c | relative_url }}" alt="Certificate {{ forloop.index }}">
+			</figure>
+		{% endfor %}
+	</div>
+</section>
+
+<!-- Favourite Books gallery -->
+<hr />
+<section id="books">
+	<h2>Favourite Books</h2>
+	<p>If the book images are missing here, please copy the files into <code>assets/images/</code>.</p>
+
+	{% assign books = "image.png|image10.png|image 1.png|image2.png|images3.jpg|image8.png|image 5.jpg|image7.png|image6.png|image9.png" | split: "|" %}
+	<div class="books-grid">
+		{% for b in books %}
+			<figure class="book-item">
+				<img src="{{ '/assets/images/' | append: b | relative_url }}" alt="Book {{ forloop.index }}">
+			</figure>
+		{% endfor %}
+	</div>
+</section>
