@@ -36,17 +36,6 @@ I also enjoy public speaking and have worked on presentations for conferences, a
 	</div>
 </section>
 
-<!-- Favourite Books gallery -->
+<!-- Favourite Books (moved) -->
 <hr />
-<section id="books">
-	<h2>Favourite Books</h2>
 
-	{% assign books = "image.png|image10.png|image 1.png|image2.png|images3.jpg|image8.png|image 5.jpg|image7.png|image6.png|image9.png" | split: "|" %}
-	<div class="books-grid">
-		{% for b in books %}
-			<figure class="book-item">
-				<img src="{{ '/assets/images/' | append: b | relative_url }}" alt="Book {{ forloop.index }}">
-			</figure>
-		{% endfor %}
-	</div>
-</section>

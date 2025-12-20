@@ -392,3 +392,30 @@ body{
   .nav-open .header-right{ display:flex; }
   .footer-inner{ flex-direction:column; gap:8px; }
 }
+
+/* Resume / books styles */
+.resume-title{
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight:700;
+  margin-bottom:0.8rem;
+  color:var(--text);
+}
+.books-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:18px;
+  align-items:stretch;
+  margin-top:12px;
+}
+.book-item img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  display:block;
+}
+@media (max-width:540px){
+  .books-grid{ grid-template-columns:1fr; gap:12px; }
+  .book-item img{ height:160px; }
+}
